@@ -1,0 +1,4 @@
+<button (click)="change(true)">+</button>
+<button (click)="change(false)">-</button>
+<br>
+<input [ngModel]="userName" (ngModelChange)="onNameChange($event)" />

@@ -1,14 +1,93 @@
-<h1>#1 </h1>
-<p>Имя: {{name}}</p>
-<p>Возраст: {{age}}</p>
-<br>
-<h1>#Привязка свойств элементов html </h1>
-<input type="text" [value]="name" />
-<br>
-<h1>#Привязка к событию </h1>
-<p>Количество кликов {{count}}</p>
-<button (click)="increase($event)">Click</button>
-<h1>#2 </h1>
+<br><h1>ContentChild</h1>
+<child6-comp>
+    <h3 #headerContent>Добро пожаловать {{name}}!</h3>
+</child6-comp>
+
+<br><h1>ContentChild - END</h1>
+
+<br><h1>ViewChild</h1>
+<child5-comp></child5-comp>
+<button (click)="increment()">+</button>
+<button (click)="decrement()">-</button>
+<br><br>
+<p #nameText>{{name}}</p>
+<p>{{nameText.textContent}}</p>
+<button (click)="change()">Изменить</button>
+<br><h1>ViewChild - END</h1>
+
+
+<br><h1>Шаблонные переменные</h1>
+<p #userName>{{name}}</p>
+<p>{{userName.textContent}}</p>
+<input type="text" [(ngModel)]="name" />
+<br><br>
+<child5-comp #counter></child5-comp>
+<button (click)="counter.increment()">+</button>
+<button (click)="counter.decrement()">-</button>
+<br><h1>Шаблонные переменные - END</h1>
+
+
+<br><h1>Жизненный цикл компонента</h1>
+<child4-comp [name]="name"></child4-comp>
+<input type="text" [(ngModel)] ="name" />
+<input type="number" [(ngModel)]="age" />
+<br><h1>Жизненный цикл компонента - END</h1>
+
+
+<br><h1>Привязка к событиям дочернего компонента</h1>
+<h2>Количество кликов: {{clicks}}</h2>
+<child3-comp (onChanged)="onChanged($event)" [(userName)]="name"></child3-comp>
+<p>Выбранное имя: {{name}}</p>
+<br><h1>Привязка к событиям дочернего компонента - END</h1>
+
+<br><h1>Взаимодействие между компонентами</h1>
+<child2-comp [userName]="name" [userAge]="age">
+</child2-comp>
+<input type="number" [(ngModel)]="age" />
+<br><h1>Взаимодействие между компонентами - END</h1>
+
+<br><h1>Работа с компонентами</h1>
+<child-comp></child-comp>
+<p>Привет {{name}}</p>
+
+<br><h2>ng-content</h2>
+
+<child-comp>Добро пожаловать {{name}}</child-comp>
+<br><h1>Работа с компонентами - END</h1>
+
 <label>Введите имя:</label>
-<input [(ngModel)]="name" placeholder="name1">
-<h1>Добро пожаловать {{name}}!</h1>
+<input [(ngModel)]="name" placeholder="name">
+<h1>Добро пожаловать {{name}}</h1>
+
+<br><h2>Привязка свойств элементов html</h2>
+<input type="text" [value]="name" />
+<p [textContent]="name"></p>
+
+<br><h2>Привязка к атрибуту</h2>
+<table border='1'>
+    <tr><td [attr.colspan] ="colspan">One-Two</td></tr>
+    <tr><td>Three</td><td>Four</td></tr>
+    <tr><td>Five</td><td>Six</td></tr>
+</table>
+
+<br><h2>Привязка к событию</h2>
+<p>Количество кликов {{count}}</p>
+<button (click)="increase()">Click</button>
+
+<br><h2>Двусторонняя привязка</h2>
+<p>Привет {{name}}</p>
+<input type="text" [(ngModel)]="name" /> 
+<br><br>
+<input type="text" [(ngModel)]="name" />
+
+<br><h2>Привязка к классам CSS</h2>
+<div [class.isredbox] = "isRed"></div>
+<div [class.isredbox]="!isRed"></div>
+<input type="checkbox" [(ngModel)]="isRed" />
+<div [class]="red"></div>
+
+<br><h2>Привязка стилей</h2>
+<div [style.backgroundColor]="isRed ? 'red' : 'green'"></div>
+<div [style.backgroundColor]="!isRed ? 'red' : 'green'"></div>
+<input type="checkbox" [(ngModel)]="isRed" />
+
