@@ -11,7 +11,7 @@ export class Chap3Component{
     isSegoe = true;
     isNavy = true;
 
-    curentClasses={
+    currentClasses={
         verdanaFont: this.isVerdana,
         navyColor: this.isNavy
     }
