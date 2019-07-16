@@ -9,9 +9,10 @@ import { Child4Component } from './child4.component';
 import { Child5Component } from './child5.component';
 import { Child6Component } from './child6.component';
 import { DataModule } from './data/data.module';
+import { Chap3Module } from './Chapter3/chap3.module';
 
 @NgModule({
-   imports: [ BrowserModule, FormsModule, DataModule ],
+   imports: [ BrowserModule, FormsModule, DataModule, Chap3Module ],
    declarations: [ AppComponent, ChildComponent, Child2Component,  
                    Child3Component, Child4Component, Child5Component,
                    Child6Component],
