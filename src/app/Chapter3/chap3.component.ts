@@ -7,12 +7,5 @@ import { Component } from "@angular/core";
 })
 
 export class Chap3Component{
-    isVerdana = true;
-    isSegoe = true;
-    isNavy = true;
 
-    currentClasses={
-        verdanaFont: this.isVerdana,
-        navyColor: this.isNavy
-    }
 }
