@@ -15,6 +15,5 @@ export class WhileDirective {
         } else {
             this.viewContainer.clear();
         } 
-
     }
 }
