@@ -4,7 +4,7 @@
   "description": "First Angular 7 Project",
   "author": "Eugene Popov <metanit.com>",
   "scripts": {
-    "dev": "webpack-dev-server --hot --open",
+    "start": "webpack-dev-server --hot --open",
     "build": "webpack"
   },
   "dependencies": {
